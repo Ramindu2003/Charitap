@@ -1,0 +1,406 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background: #F5F5F5;
+    color: #333;
+}
+
+header {
+    background: #800080;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #DDA0DD;
+}
+
+.hero {
+    /* use hero image as full-width background while keeping a subtle gradient fallback */
+    background: linear-gradient(to right, rgba(128,0,128,0.45), rgba(221,160,221,0.25)), url('assets/images/donate7.jpg') center/cover no-repeat;
+    color: white;
+    padding: 60px 20px;
+    margin-top: 60px;
+    position: relative;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero button {
+    background: white;
+    color: #800080;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.hero button:hover {
+    background: #DDA0DD;
+    color: white;
+}
+
+/* Hero image styles */
+/* turn the large picture into a small corner thumbnail while background handles full-width image */
+.hero-picture { position: absolute; right: 24px; bottom: 24px; width: 140px; height: 92px; overflow: hidden; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
+.hero-img { width:100%; height:100%; object-fit:cover; display:block; }
+.hero-content { max-width: 920px; text-align: center; }
+.btn-hero { display:inline-block; background:#fff; color:#800080; padding:12px 20px; border-radius:28px; text-decoration:none; font-weight:700; }
+
+@media (max-width:860px){
+    .hero { padding:40px 16px; min-height: auto; }
+    .hero-picture { right: 12px; bottom: 12px; width: 110px; height: 72px; }
+    .hero-content { padding: 8px 4px; }
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.category {
+    background: white;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 200px;
+    transition: transform 0.3s;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+}
+
+/* Category image styling */
+.category-img {
+    display: block;
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 0 0 12px;
+}
+
+.category .icon { display:none; } /* hide CSS-only icons when image is present */
+
+.category h3 {
+    color: #800080;
+}
+
+.testimonials {
+    background: #DDA0DD;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.testimonial {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: inline-block;
+    width: 250px;
+}
+
+footer {
+    background: #800080;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.icon {
+    display: inline-block;
+    position: relative;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+}
+
+.icon::before,
+.icon::after {
+    display: block;
+}
+
+/* Disable CSS-drawn icons: use inserted <img> assets instead */
+.icon,
+.icon::before,
+.icon::after {
+    display: none !important;
+}
+
+/* CSS-Only Icons using ::before */
+.icon.heart::before {
+    content: '♥';
+    color: white;
+    font-size: 1.2em;
+}
+
+.icon.home::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 8px solid white;
+    top: 2px;
+    left: 7px;
+}
+
+.icon.home::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 6px;
+    background: white;
+    top: 10px;
+    left: 6px;
+}
+
+.icon.user::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    top: 2px;
+    left: 5px;
+}
+
+.icon.user::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 8px;
+    background: white;
+    border-radius: 6px 6px 0 0;
+    top: 12px;
+    left: 4px;
+}
+
+.icon.calendar::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 12px;
+    border: 2px solid white;
+    border-radius: 2px;
+    top: 4px;
+    left: 3px;
+}
+
+.icon.calendar::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background: white;
+    top: 2px;
+    left: 5px;
+}
+
+.icon.users::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 2px solid white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+}
+
+.icon.users::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 2px solid white;
+    border-radius: 50%;
+    top: 2px;
+    left: 10px;
+}
+
+.icon.chart::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 10px;
+    background: white;
+    top: 5px;
+    left: 4px;
+    clip-path: polygon(0 100%, 25% 0, 50% 50%, 75% 25%, 100% 75%);
+}
+
+.icon.signin::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 8px;
+    border: 2px solid white;
+    border-radius: 2px;
+    top: 6px;
+    left: 4px;
+}
+
+.icon.signin::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 6px;
+}
+
+.icon.dollar::before {
+    content: '$';
+    color: #800080;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.icon.utensil::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 8px;
+    background: #800080;
+    border-radius: 2px;
+    top: 6px;
+    left: 4px;
+}
+
+.icon.utensil::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 4px;
+    background: #800080;
+    border-radius: 2px;
+    top: 2px;
+    left: 6px;
+}
+
+.icon.tshirt::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 16px;
+    border: 2px solid #800080;
+    border-radius: 4px;
+    top: 2px;
+    left: 3px;
+}
+
+.icon.tshirt::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #800080;
+    border-radius: 50%;
+    top: 4px;
+    left: 7px;
+}
+
+.icon.book::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 14px;
+    border: 2px solid #800080;
+    border-radius: 2px;
+    top: 3px;
+    left: 4px;
+}
+
+.icon.book::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 2px;
+    background: #800080;
+    top: 5px;
+    left: 6px;
+}
+
+        .footer-contact {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 24px;
+          margin: 24px 0;
+          text-align: center;
+        }
+        .contact-item {
+          padding: 12px;
+        }
+        .contact-item h4 {
+          margin: 0 0 8px 0;
+          color: #fff;
+          font-size: 0.95rem;
+        }
+        .contact-item p {
+          margin: 4px 0;
+          color: #fff;
+        }
+        .contact-item a {
+          color: #fff;
+          text-decoration: none;
+          font-weight: 600;
+        }
+        .contact-item a:hover {
+          text-decoration: underline;
+          color: #DDA0DD;
+        }
+
+/* Creative nav styles (moved from inline <style> in home.php and header.php) */
+.creative-nav{ background: linear-gradient(90deg, #800080, #DDA0DD); border-bottom:1px solid #DDA0DD; padding:0; position:sticky; top:0; z-index:100; backdrop-filter:blur(8px); }
+.creative-nav-inner{ max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 16px; height:64px; }
+.creative-nav-brand{ display:flex; align-items:center; gap:8px; text-decoration:none; font-weight:700; font-size:1.3rem; background:linear-gradient(90deg,#60a5fa,#6ee7b7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.creative-nav-links{ display:flex; gap:4px; align-items:center; list-style:none; margin:0; padding:0; }
+.creative-nav-links a{ color:#e6eef8; text-decoration:none; padding:8px 14px; border-radius:8px; font-weight:600; font-size:0.92rem; transition:all .18s ease; display:inline-flex; align-items:center; gap:6px; }
+.creative-nav-links a:hover{ background:linear-gradient(90deg, rgba(96,165,250,0.1), rgba(110,231,183,0.1)); color:#60a5fa; transform:translateY(-2px); }
+.creative-nav-right{ display:flex; align-items:center; gap:12px; }
+.nav-cta{ background:linear-gradient(90deg,#60a5fa,#6ee7b7); color:#071426 !important; padding:9px 16px !important; border-radius:8px; font-weight:700; box-shadow:0 6px 20px rgba(96,165,250,0.15); text-decoration:none; }
+.nav-cta:hover{ transform:translateY(-3px); box-shadow:0 10px 30px rgba(96,165,250,0.25); }
+@media(max-width:720px){ .creative-nav-inner{ height:56px; } .creative-nav-links a{ padding:6px 10px; font-size:0.88rem; } .creative-nav-brand{ font-size:1.1rem; } }
+
+/* Promo banner styles moved from home.php */
+.promo-banner { background: linear-gradient(90deg, #60a5fa, #6ee7b7); color: white; padding: 12px 16px; text-align: center; font-weight: 600; font-size: 0.95rem; }
+.promo-banner a { color: white; text-decoration: underline; }
+.promo-banner a:hover { opacity: 0.9; }

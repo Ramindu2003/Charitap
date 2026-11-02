@@ -1,0 +1,154 @@
+/* Events page styles (matches events.php markup) */
+body { font-family: 'Arial', sans-serif; margin: 0; background: #F5F5F5; color: #333; }
+
+/* Target the site header class to avoid clashing with site.css header rules */
+.site-header { background: #800080; color: white; }
+
+.page-content { padding: 26px 0; }
+
+/* Events list */
+.events-list { list-style: none; padding: 0; margin: 12px 0 0 0; display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 18px; }
+.events-list li { background: #fff; border-radius: 12px; padding: 16px; box-shadow: 0 6px 18px rgba(16,24,40,0.06); }
+.events-list li strong { display:block; color:#800080; font-size:16px; margin-bottom:6px }
+.events-list li .meta { color:#6b7280; font-size:13px; margin-bottom:8px }
+.events-list li p { margin:0; color:#374151 }
+
+/* Create event card/form (used in events.php) */
+.card { background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06); }
+.card h3 { margin:0 0 10px 0;color:#333 }
+.card .field { margin-bottom:10px }
+.card input[type="text"], .card input[type="date"], .card textarea { width:100%; padding:10px;border-radius:8px;border:1px solid #e6edf3 }
+.card textarea{ min-height:90px }
+.text-right { text-align:right }
+.btn { padding:8px 14px;border-radius:8px;border:0;cursor:pointer;font-weight:700 }
+.btn-primary { background:#2193b0;color:#fff }
+
+/* responsive tweaks */
+@media (max-width:600px){
+  .events-list { grid-template-columns: 1fr }
+}
+
+
+.icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+/* CSS-Only Icons using ::before */
+.icon.heart::before {
+    content: '♥';
+    color: white;
+    font-size: 1.2em;
+}
+
+.icon.home::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 8px solid white;
+    top: 2px;
+    left: 7px;
+}
+
+.icon.home::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 6px;
+    background: white;
+    top: 10px;
+    left: 6px;
+}
+
+.icon.user::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    top: 2px;
+    left: 5px;
+}
+
+.icon.user::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 8px;
+    background: white;
+    border-radius: 6px 6px 0 0;
+    top: 12px;
+    left: 4px;
+}
+
+.icon.calendar::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 12px;
+    border: 2px solid white;
+    border-radius: 2px;
+    top: 4px;
+    left: 3px;
+}
+
+.icon.calendar::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background: white;
+    top: 2px;
+    left: 5px;
+}
+
+.icon.users::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 2px solid white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+}
+
+.icon.users::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 2px solid white;
+    border-radius: 50%;
+    top: 2px;
+    left: 10px;
+}
+
+.icon.chart::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 10px;
+    background: white;
+    top: 5px;
+    left: 4px;
+    clip-path: polygon(0 100%, 25% 0, 50% 50%, 75% 25%, 100% 75%);
+}
+
+.icon.signin::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 8px;
+    border: 2px solid white;
+    border-radius: 2px;
+    top: 6px;
+    left: 4px;
+}
+
+.icon.signin::after { content: ''; position: absolute; width: 4px; height: 4px; background: white; border-radius: 50%; top: 2px; left: 6px; }

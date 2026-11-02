@@ -1,0 +1,40 @@
+/* Site-wide styles and navigation */
+:root{ --purple:#800080; --accent:#2193b0; --bg:#f4f7fb; --card:#fff }
+*{box-sizing:border-box}
+body{margin:0;font-family: 'Segoe UI', Roboto, Arial, sans-serif;background:var(--bg);color:#222}
+.container{max-width:1100px;margin:0 auto;padding:0 18px}
+.site-header{background:var(--purple);color:#fff;padding:12px 0;position:sticky;top:0;z-index:50}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand a{color:#fff;text-decoration:none;font-weight:700;font-size:18px}
+.main-nav{display:flex;gap:12px}
+.main-nav a{color:#fff;text-decoration:none;padding:6px 8px;border-radius:6px;opacity:0.95}
+.main-nav a:hover{background:rgba(255,255,255,0.06)}
+.nav-right{display:flex;gap:10px;align-items:center}
+.btn-nav{background:#fff;color:var(--purple);padding:6px 10px;border-radius:8px;text-decoration:none;font-weight:700}
+.muted.small{color:#f3e6f3}
+
+/* content spacing */
+.page-content{padding:26px 0}
+
+/* simple responsive */
+@media (max-width:720px){.main-nav{display:none}}
+
+/* Creative nav moved from inline styles in header.php/home.php */
+.creative-nav{ background: linear-gradient(90deg, #800080, #DDA0DD); border-bottom:1px solid #DDA0DD; padding:0; position:sticky; top:0; z-index:100; backdrop-filter:blur(8px); }
+.creative-nav-inner{ max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 16px; height:64px; }
+.creative-nav-brand{ display:flex; align-items:center; gap:8px; text-decoration:none; font-weight:700; font-size:1.3rem; background:linear-gradient(90deg,#60a5fa,#6ee7b7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.creative-nav-links{ display:flex; gap:4px; align-items:center; list-style:none; margin:0; padding:0; }
+.creative-nav-links a{ color:#e6eef8; text-decoration:none; padding:8px 14px; border-radius:8px; font-weight:600; font-size:0.92rem; transition:all .18s ease; display:inline-flex; align-items:center; gap:6px; }
+.creative-nav-links a:hover{ background:linear-gradient(90deg, rgba(96,165,250,0.1), rgba(110,231,183,0.1)); color:#60a5fa; transform:translateY(-2px); }
+.creative-nav-right{ display:flex; align-items:center; gap:12px; }
+.nav-cta{ background:linear-gradient(90deg,#60a5fa,#6ee7b7); color:#071426 !important; padding:9px 16px !important; border-radius:8px; font-weight:700; box-shadow:0 6px 20px rgba(96,165,250,0.15); text-decoration:none; }
+.nav-cta:hover{ transform:translateY(-3px); box-shadow:0 10px 30px rgba(96,165,250,0.25); }
+@media(max-width:720px){ .creative-nav-inner{ height:56px; } .creative-nav-links a{ padding:6px 10px; font-size:0.88rem; } .creative-nav-brand{ font-size:1.1rem; } }
+
+/* Footer contact styles moved from inline footer blocks */
+.footer-contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin: 24px 0; text-align: center; }
+.contact-item { padding: 12px; }
+.contact-item h4 { margin: 0 0 8px 0; color: #800080; font-size: 0.95rem; }
+.contact-item p { margin: 4px 0; color: #333; }
+.contact-item a { color: #800080; text-decoration: none; font-weight: 600; }
+.contact-item a:hover { text-decoration: underline; }
